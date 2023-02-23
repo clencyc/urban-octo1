@@ -2,9 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Members</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
 </head>
 <body>
 
+<h1 class="hi">Members page</h1>
+<div class="inp">
+   <form action="" method="post" class="form1">
+    {% csrf_token %}
+    {{ reg_members_form.as_p }}
+
+
+<input class="txt" type="submit" name="member" value="RegisterMember">
+
+
+</form>
+</div>
+
+{% if submit_members == "RegisterMember" %}
+
+    {{ name }}
+    {{ age }}
+    {{ phone }}
+    {{ city }}
+    {{ country }}
+{% endif %}
 </body>
 </html>
